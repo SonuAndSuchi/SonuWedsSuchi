@@ -54,7 +54,7 @@
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">Venue</a></li>
-                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
+                            <!-- <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li> -->
                         </ul>
                     </nav>
                 </div>
@@ -160,22 +160,26 @@
         </div>
         <div class="row section-padding">
 
-            <table class="col-md-4 col-md-offset-4 text-center">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <table >
                 <tr>
-                  <td>  <div>
+                  <td> 
                     <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
                         <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
                     </a>
-                </div></td>
-                  <td> <div >
-                    <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
-                        <i class="fa fa-barcode"></i>&nbsp;&nbsp;Food menu
+                </td>
+                <td>
+                    <p>&nbsp;&nbsp;</p>
+                </td>
+                  <td> <div>
+                    <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal1">
+                        <i class='fas fa-drumstick-bite'></i>&nbsp;&nbsp;Food menu
                     </a>
-                </div></td>
+                </td>
                 </tr>
               </table>
           
-        
+            </div>
 
            
         </div>
@@ -218,6 +222,30 @@
                         Ladies can flaunt their unconventional sarees, lehengas, anarkalis, and the list
                         goes on whereas gentlemen can wear any kind of suit, jacket or just blazer.
                     </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="dc-modal1" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">10th to 16th Food Menu</h3>
+                    <h5>Usual Menu <span class="time">10th - 16th</span></h5>
+                    <p>
+                        <strong>Menu covers dates from <a href="https://drive.google.com/file/d/1jcpazMauAcKjlf8ZpRfArJUNXThGOqrG/view?usp=sharing" target="_blank">10th to 16th december</a>.</strong>
+                        <br>
+                    </p>
+                    <h5>Special Menu<span class="time">15th (6PM - 10PM)</span></h5>
+                    <p>
+                        <strong>The Special Menu is for <a href="https://drive.google.com/file/d/1ADfx1_4kJVoAQQ6QLzjSC2EmcJrVX0Xt/view?usp=sharing" target="_blank">Reception</a>.</strong>
+                        <br>
+                    </p>
+
+         
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -365,7 +393,7 @@
                         </div>
                     </div>
                     <div class="row text-center">
-                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
+                            <a class="btn btn-accent btn-small" id="btn-show-map" href="https://www.google.com/maps/dir//Hotel+Swarnachuda,+near+BUS+STAND,+Sahadevkhuntha,+Railway+Colony,+Balasore,+Odisha+756001/@21.5066085,86.9147773,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3a1cf5998781748d:0xc9c075e24f11a8f9!2m2!1d86.9171082!2d21.5042037!3e0"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
                                 map</a>
                     </div>
                 </div>
@@ -373,80 +401,6 @@
         </div>
     </div>
 </section>
-
-<section class="rsvp text-center" id="rsvp">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We are glad to see you join us on our big day.</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 10th of December '21</p>
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Your email"
-                                                                     required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
-                                                                 required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
 <footer>
     <div class="container">
         <div class="row">
@@ -460,6 +414,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
