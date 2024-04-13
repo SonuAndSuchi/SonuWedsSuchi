@@ -1,5 +1,5 @@
 # Wedding Website
-A beautiful wedding website that I created for one of my client.
+A beautiful wedding website that I created for one of my brother's weddings (client).
 
 
 # Getting Started
