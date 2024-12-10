@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -427,41 +430,62 @@
     </div>
 </section>
 
-<section id="map" class="section-padding">
-    <div class="text-center">
-        <h3>How do I get there?</h3>
-        <p>It's way easier than you think!</p>
+<section id="map" class="section-padding" style="position: relative;">
+    <div id="map-canvas" style="height: 500px; width: 100%;"></div>
+
+    <!-- Centered Box -->
+    <div id="map-overlay" style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        width: 25%;
+        text-align: center;
+        z-index: 1000;">
+        <h5 style="margin: 0;">HOTEL SWARNACHUDA</h5>
+        <p style="margin: 5px 0;">Sahadevkhunta, Balasore,<br>Odisha 756001, India</p>
+        <h5 style="margin: 0;">MR. M PRADHAN</h5>
+        <p>
+            <i class="fa fa-mobile"></i> <a href="tel://06782262657">06782262657</a><br>
+            <i class="fa fa-mobile"></i> <a href="tel://06782263440">06782263440</a>
+        </p>
+        <a class="btn btn-accent btn-small" id="btn-show-map" href="https://www.google.com/maps/dir//Hotel+Swarnachuda,+near+BUS+STAND,+Sahadevkhuntha,+Railway+Colony,+Balasore,+Odisha+756001/@21.5066085,86.9147773,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3a1cf5998781748d:0xc9c075e24f11a8f9!2m2!1d86.9171082!2d21.5042037!3e0" target="_blank" style="
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #f5c242;
+            color: #f5c242;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;">
+            <i class="fa fa-map-marker"></i>&nbsp; SHOW MAP
+        </a>
     </div>
-    <div id="map-canvas"></div>
-    <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Hotel Swarnachuda</h5>
-                            <p>Sahadevkhunta, Balasore, Odisha 756001, India</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Mr. M Pradhan</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://06782 262657">+06782262657</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://06782 263440">+06782263440</a></p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                            <a class="btn btn-accent btn-small" id="btn-show-map" href="https://www.google.com/maps/dir//Hotel+Swarnachuda,+near+BUS+STAND,+Sahadevkhuntha,+Railway+Colony,+Balasore,+Odisha+756001/@21.5066085,86.9147773,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x3a1cf5998781748d:0xc9c075e24f11a8f9!2m2!1d86.9171082!2d21.5042037!3e0"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
-                                map</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <!-- Leaflet Map -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map-canvas').setView([21.4934, 86.9135], 13); // Center map at Balasore
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add a marker for the hotel
+            L.marker([21.4934, 86.9135]).addTo(map)
+                .bindPopup('<b>Hotel Swarnachuda</b><br>Sahadevkhunta, Balasore, Odisha 756001, India.')
+                .openPopup();
+        });
+    </script>
 </section>
+
+
+
+
+
 <footer>
     <div class="container">
         <div class="row">
